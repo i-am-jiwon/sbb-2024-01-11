@@ -23,8 +23,8 @@ public class HelloConfiguration {
                 .build();
     }
     @Bean
-    public Step step1(JobRepository jobRepository, Tasklet testTasklet, PlatformTransactionManager platformTransactionManager){
-        return new StepBuilder("step1", jobRepository)
+    public Step step(JobRepository jobRepository, Tasklet testTasklet, PlatformTransactionManager platformTransactionManager){
+        return new StepBuilder("step", jobRepository)
                 .tasklet(testTasklet, platformTransactionManager).build();
     }
     @Bean
